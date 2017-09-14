@@ -1,0 +1,42 @@
+<form name="messageForm" method="post" action="/message.action" id="messageForm1">
+           <input type="hidden" name="msg.field1" class="enterinput" id="field1" value="邓迎" />
+           <input type="hidden" name="msg.remark" class="enterinput" id="remark" value="邓迎" />
+           <input type="hidden" value="" name="msg.email" id="email" />
+           <input type="hidden" value="广州分校" name="msg.school_code" id="schoolCode" />
+           <input type="hidden" value="成人自考" name="msg.project_code" />
+           <input type="hidden" value="成人自考" name="msg.message_type" />
+           <input type="hidden" name="msg.field3" value="" id="field3" />
+           <input type="hidden" value="http://i.sunlands.com/portal-war/message.action" id="msgUrl" />
+           <input name="msg.phone" onfocus="if(this.value==this.defaultValue){this.value='';};" placeholder="请输入您的电话" onblur="if(this.value==''){this.value=this.defaultValue;}" value="" maxlength="11" style="width:60%;height:2rem;line-height:1rem;border:2px solid #e00061;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;padding-left: 6px;" />
+           <br />
+           <input type="button" value="免费获取新版考试资讯" id="msgBtn" onclick="tuiguang_message_open('messageForm1',callback,1,35)" style="width:65%;height:2.8rem;margin-top:1rem;background:#e00061;border:none;border-radius:2px;color:#fff;font-size:1.3rem;font-family:微软雅黑;" />
+          </form>
+
+
+
+
+    <script type="text/javascript" src="http://lp.sunlands.com/js/portalJs/message.js"></script>
+
+
+
+
+
+
+  <script>
+          function callback(msg){
+  		alert("恭喜您，信息已提交成功！");
+  		//追加短信,可以删除掉,如果要追加留言必须带上参数:&callback="+回调函数如:testBack可以为别的随便名称,但必须跟下面的名称一样
+  		 $.ajax({
+               url: encodeURI(encodeURI("http://w.sunlands.com/tuiguang/ajax_tuiguang_message.htm?tel="+msg.phone+"&name="+msg.name
+               +"&messageId="+msg.messageId+"&schoolId="+msg.schoolId+"&callback="+testBack)),
+               type: "get",
+   			 dataType: "jsonp",
+   		     jsonp: testBack,//回调函名称必须有,和参数&callback="的值一样的
+               success: function(data){}
+  		 });
+  	}
+  	//和追加留言一起的回调函数,和参数&callback="的值一样的
+  	function testBack(msg){
+  		//可以为空
+  	}
+  </script>

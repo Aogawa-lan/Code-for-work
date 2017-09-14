@@ -1,0 +1,19 @@
+<script>
+function swgdjc()
+{
+	if($('#swgd').offset().top==0){
+		$("#navobj").hide();
+	};
+	if($('#swgd').offset().top<0){
+		$("#navobj").show();
+	};
+}
+setInterval("swgdjc()",30);
+
+</script>
+
+
+
+
+//swgd 为容器swiper-wrapper的ID
+//navobj 为顶部固定条的ID

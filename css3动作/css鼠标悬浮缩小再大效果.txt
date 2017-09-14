@@ -1,0 +1,9 @@
+.csb_xw_2:hover {
+	text-decoration:none;
+	-webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+	transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+	/*color: #ECEFF1;*/
+	/*background-color: #0292e5;*/
+	-webkit-animation: anim-moema-1 0.3s forwards;
+	animation: anim-moema-1 0.3s forwards;
+}

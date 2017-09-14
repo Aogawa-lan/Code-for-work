@@ -1,0 +1,11 @@
+		<script language="javascript" type="text/javascript">
+			$(function() {
+				$(".specialf").click(function() {
+					$(".navImg_TK").fadeIn();
+				});
+				$("em").click(function() {
+					$(".navImg_TK").fadeOut();
+				});
+
+			});
+		</script>

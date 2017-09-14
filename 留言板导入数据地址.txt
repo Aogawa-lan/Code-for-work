@@ -1,0 +1,19 @@
+<script type="text/javascript">  
+ 
+$(function () {  
+ 
+var url = this.location.href;  
+ 
+$("form #field3").each(function (n) {  
+
+	 $("form #field3").get(n).value = url;  
+ 
+})  
+ 
+})  
+
+ </script>  
+
+
+
+index_zjlyhsf

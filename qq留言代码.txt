@@ -1,0 +1,89 @@
+前端代码信息：
+	<!DOCTYPE html> 
+	<html lang="en"> 
+	<head> 
+	<meta charset="UTF-8"> 
+	<title>QQ留言</title> 
+	<script src="jquery.min.js"></script>
+<script> 
+function submitData(){    //留言接口
+	var qqValue = $("#qq").val(); 	
+
+	var checkNum = /^[0-9]{6,}$/;			
+	if (!checkNum.test(qqValue)) {
+		alert("您还没有填写QQ资料或输入的QQ不合法！")
+		return;
+	}	
+	$.ajax({ 
+	method: "GET", 
+	url: 'http://36.110.107.218:8180/ws/rest/onlineOpportunity/addMessageOpportunity', 
+	data: { 
+	siteId:'6014696',   //站点ID号
+	messageType:'QQ',    //留言类型
+	qq:qqValue       //QQ号
+	}, 
+	success: function(jsonData) { 
+	alert('申请成功！请登陆QQ留意老师的添加申请，通过后即可获得学历提升方案.'); 
+	},
+	dataType: 'jsonp', 
+	jsonp : "callback", 
+	}); 
+	} 
+</script> 
+	
+	</head> 
+	<body> 
+	
+	QQ号：<input type="text" id="qq" value=""/> 
+	<input type="button" id="btn" value="提交" onclick="javascript:submitData();" /> 
+	</html>
+
+参考链接：
+http://gz.yesacc.com/zk/index_whnzkpcynbd.html
+http://gz.yesacc.com/wap/zk/index_whnzkydynbd.html
+http://gz.sunnycareer.com/zk/index_whnzkpcynbd.html
+http://gz.sunnycareer.com/wap/zk/index_whnzkydynbd.html
+
+
+
+
+解决苹果手机跳转不了的问题（留言完直接跳转，没弹窗）
+
+<script> 
+function submitData(){    //留言接口
+	var qqValue = $("#qq").val(); 	
+
+	var checkNum = /^[0-9]{6,}$/;			
+	if (!checkNum.test(qqValue)) {
+		alert("您还没有填写QQ资料或输入的QQ不合法！")
+		return;
+	}	
+
+	var winRef = window.open("", "_blank");//打开一个新的页面
+	function loc(){
+		var url = 'http://sunlands.gensee.com/webcast/site/vod/play-a1f4dff4dba741abbdbd4aeeccb20c8a';
+		winRef.location = url;//改变页面的 location
+	}
+	
+	$.ajax({ 
+	method: "GET", 
+	url: 'http://36.110.107.218:8180/ws/rest/onlineOpportunity/addMessageOpportunity', 
+	data: { 
+	siteId:'97451',   //站点ID号
+	messageType:'QQ',    //留言类型
+	qq:qqValue       //QQ号
+	}, 
+	success: function(jsonData) { 
+	
+		setTimeout(loc(),500);//这个等待很重要，如果不等待的话将无法实现
+		 
+	}, 
+	dataType: 'jsonp', 
+	jsonp : "callback", 
+	}); 
+	} 
+
+</script> 
+
+
+

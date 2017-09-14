@@ -1,0 +1,13 @@
+
+.zc i{ animation:scal ease 1.2s infinite; -webkit-animation:scal ease 1.2s infinite;}
+
+@keyframes scal {
+	0% {transform:scale(0.5, 0.5)}
+	100% {transform:scale(0.5, 0.5)}
+	50% {transform:scale(1, 1)}
+}
+@-webkit-keyframes scal {
+	0% {transform:scale(0.5, 0.5)}
+	100% {transform:scale(0.5, 0.5)}
+	50% {transform:scale(1, 1)}
+}
